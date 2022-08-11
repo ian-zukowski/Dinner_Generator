@@ -1,5 +1,16 @@
 # Dinner_Generator
+Hello, and welcome to the greatest development in the culinary software field since sliced dataframes! In this Github repo you can find the .xlsm file which I've been using since June 2022 to help me stay consistent in cooking homemade meals instead of always eating out. I was inspired to create this project when I realized I had been ordering takeout much more frequently during the pandemic, and then even moreso during my wife's first pregnancy when she would get cravings for fast food. 
 
+I've enjoyed cooking ever since I graduated college, and I understood that my decline in home cooking stemmed mainly from not having a coherent plan for the week ahead when I went grocery shopping. This would then create a cycle of:
+
+1. Not being able to think of more than 7 or 8 recipes I could do with the ingredients in my pantry
+2. Doing the same set of recipes over and over
+3. Using Kroger Clicklist to order groceries, and seeing all my 'Previously Bought' items first and thinking "You're right Clicklist, we DID use zucchini every week this past month, so we probably need to restock those"
+4. Loop back to 1, where I have 3 zucchini that I have to use up and can only think of a couple recipes that I've done with them recently
+
+Occassionally I'd find a recipe I wanted to try out, but that always required a trip up to the grocery store to grab several ingredients which we didn't currently have. So with that cycle in mind, I figured I really ought to make a list of all the different recipes I could choose from before going grocery shopping. That way I would have the ingredients I needed, without having extras that force me into doing the same type of meals over and over. 
+
+And here we reach the purpose of this repo: I've created a macro-enabled file which houses 30+ dinner ideas for me to generate before going grocery shopping. And after generating the list of meals I'd like to cook, it also has the ability to generate a grocery list which I can easily print to one sheet of paper in landscape. This has made my cooking process MUCH more streamlined and diverse, which also has the side benefit of giving me more time with my new son!
 
 ## DESCRIPTION OF MACROS
 * Recipe_Generator
@@ -10,6 +21,8 @@
     - This macro is located in the "Grocery_List" worksheet of the file. It will access the generated list of recipes located in the "Recipe_Generator" worksheet, and then print the results in separated sections (roughly based on locations in Kroger aisles)
 
 ## FUTURE IMPROVEMENTS
+* Add the actual recipes I use into the database so others can see how to make the meals (or I can double check the source recipe)
+    <!-- No code required -- just a ton of data input -->
 * Allow user to input a desired recipe_type in Recipe_Generator
     <!-- 'If not requesting a specific recipe type 0 first
     'If you want random, type "Random"
