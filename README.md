@@ -7,7 +7,7 @@
 * Grocery_List
 
 ## FUTURE IMPROVEMENTS
-* Allow user to input a desired recipe_type in Recipe_Generator
+* Allow user to input a desired recipe_type in Recipe_Generator, or click on the links provided.
     <!-- 'If not requesting a specific recipe type 0 first
     'If you want random, type "Random"
     'If you want specific, type "___"
