@@ -7,7 +7,7 @@
 * Grocery_List
 
 ## FUTURE IMPROVEMENTS
-* Allow user to input a desired recipe_type in Recipe_Generator, or click on the links provided.
+* Allow user to input a desired recipe_type in Recipe_Generator
     <!-- 'If not requesting a specific recipe type 0 first
     'If you want random, type "Random"
     'If you want specific, type "___"
@@ -28,7 +28,7 @@
     'Then to_html from the df -->
 
 ## CODE BEHIND THE MACROS
-For more in depth pseudocode, be sure to check out the "Pseudocode" folder in the above resources
+For more in depth pseudocode, be sure to check out the "Pseudocode" folder in the above resources, or click the relevant link provided.
 
 * [RecipeGenerator](Pseudocode/macro_pseudocode.txt)
     - Use MsgBox to allow user to input X amount of recipes to generate
