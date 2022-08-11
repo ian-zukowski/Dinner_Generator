@@ -43,7 +43,7 @@ And here we reach the purpose of this repo: I've created a macro-enabled file wh
     'Won't need to use any ingredient variables for this one
     'Do something similar to row count to find the last row, which will contain this new recipe
     'Probably want to separate it even further -- last_row holds titles: "Recipe Name", "Recipe Source", and last_row+1 holds the values -->
-* Website upload so family members can easily view
+* Website upload so my wife can easily view/veto the schedule
     <!-- 'Will need to see if there is a to_html type function for excel
     'Otherwise will need to export to a pandas df
     'Then to_html from the df -->
