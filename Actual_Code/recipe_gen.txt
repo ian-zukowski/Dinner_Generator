@@ -1,0 +1,217 @@
+'Define the sub-routine to run
+Sub weeklyRecipes()
+    
+    'Get input on how many recipes to generate
+    Dim user_input As Integer
+    
+    user_input = InputBox("How many recipes would you like to generate?")
+    
+    'Activate weekly_recipes spreadsheet to create header row
+    Worksheets("Recipe_Generator").Activate
+    
+    'Clear the previous week's recipe_list
+    Cells.Clear
+    
+    Cells(1, 1) = "ID"
+    Cells(1, 2) = "Name"
+    Cells(1, 3) = "Type"
+    Cells(1, 4) = "Meat"
+    Cells(1, 5) = "Bread"
+    Cells(1, 6) = "Noodles"
+    Cells(1, 7) = "Rice"
+    Cells(1, 8) = "Beans"
+    Cells(1, 9) = "Cheese"
+    Cells(1, 10) = "Potato"
+    Cells(1, 11) = "Sweet Potato"
+    Cells(1, 12) = "Avocado"
+    Cells(1, 13) = "Bell Pepper"
+    Cells(1, 14) = "Brocolli"
+    Cells(1, 15) = "Butternut Squash"
+    Cells(1, 16) = "Carrot"
+    Cells(1, 17) = "Celery"
+    Cells(1, 18) = "Corn"
+    Cells(1, 19) = "Cucumber"
+    Cells(1, 20) = "Green Beans"
+    Cells(1, 21) = "Green Peppers"
+    Cells(1, 22) = "Onion"
+    Cells(1, 23) = "Tomato"
+    Cells(1, 24) = "Spinach"
+    Cells(1, 25) = "Yellow Squash"
+    Cells(1, 26) = "Zucchini"
+    Cells(1, 27) = "Sauce"
+    Cells(1, 28) = "Garlic"
+    Cells(1, 29) = "Jalapeno"
+    Cells(1, 30) = "Ketchup"
+    Cells(1, 31) = "Mustard"
+    Cells(1, 32) = "Crackers"
+    Cells(1, 33) = "Sour Cream"
+    Cells(1, 34) = "Extras?"
+    Cells(1, 35) = "Side Salad"
+    Cells(1, 36) = "Recipe Location"
+    Cells(1, 37) = "Leftovers?"
+
+
+
+    'Activate the worksheet which contains the data
+    Worksheets("My_Recipes").Activate
+    'Dim RowCount = Cells(Rows.Count, "A").End(xlUp).Row to find total amount of rows
+    RowCount = Cells(Rows.Count, "A").End(xlUp).Row
+
+    'Dim column variables as strings/integers
+    Dim name As String
+    Dim genre As String
+    Dim meat As String
+    Dim bread As String
+    Dim nood As String
+    Dim rice As String
+    Dim beans As String
+    Dim cheese As String
+    Dim potato As String
+    Dim spotato As String
+    Dim sauce As String
+    Dim extra As String
+    Dim recipe As String
+    
+    Dim avocado As Single
+    Dim bpep As Single
+    Dim broc As Single
+    Dim bsquash As Single
+    Dim carrot As Single
+    Dim celery As Single
+    Dim corn As Single
+    Dim cuc As Single
+    Dim gbeans As Single
+    Dim gpep As Single
+    Dim onion As Single
+    Dim tomato As Single
+    Dim spinach As Single
+    Dim ysquash As Single
+    Dim zucc As Single
+    
+    Dim garlic As String
+    Dim jalapeno As String
+    Dim ketchup As String
+    Dim mustard As String
+    Dim crackers As String
+    Dim sourc As String
+    Dim salad As String
+    Dim leftovers As String
+    
+    
+    Dim r_i As Double
+    
+    
+    'Create x iterations for recipeIndex for loop -- check if can do "for i in [A,B,C,D,E]
+    For i = 1 To user_input
+    
+        'Dim recipe index as random value from 2 - RowCount (this may make duplicates in the weekly recipes -- these can be replaced by separate subfunction)
+        'note: 2 RowCount since we don't want to count the header row -- could also have been r_i+1, and then RowCount-1 for randbetween
+        r_i = WorksheetFunction.RandBetween(2, RowCount)
+        name = Cells(r_i, 2)
+        genre = Cells(r_i, 3)
+        meat = Cells(r_i, 4)
+        bread = Cells(r_i, 5)
+        nood = Cells(r_i, 6)
+        rice = Cells(r_i, 7)
+        beans = Cells(r_i, 8)
+        cheese = Cells(r_i, 9)
+        potato = Cells(r_i, 10)
+        spotato = Cells(r_i, 11)
+        avocado = Cells(r_i, 12)
+        bpep = Cells(r_i, 13)
+        broc = Cells(r_i, 14)
+        bsquash = Cells(r_i, 15)
+        carrot = Cells(r_i, 16)
+        celery = Cells(r_i, 17)
+        corn = Cells(r_i, 18)
+        cuc = Cells(r_i, 19)
+        gbeans = Cells(r_i, 20)
+        gpep = Cells(r_i, 21)
+        onion = Cells(r_i, 22)
+        tomato = Cells(r_i, 23)
+        spinach = Cells(r_i, 24)
+        ysquash = Cells(r_i, 25)
+        zucc = Cells(r_i, 26)
+        sauce = Cells(r_i, 27)
+        garlic = Cells(r_i, 28)
+        jalapeno = Cells(r_i, 29)
+        ketchup = Cells(r_i, 30)
+        mustard = Cells(r_i, 31)
+        crackers = Cells(r_i, 32)
+        sourc = Cells(r_i, 33)
+        extra = Cells(r_i, 34)
+        salad = Cells(r_i, 35)
+        recipe = Cells(r_i, 36)
+        leftovers = Cells(r_i, 37)
+
+        'activate the worksheet displaying the weekly recipes
+        Worksheets("Recipe_Generator").Activate
+
+        'print corresponding values in (i+1, __) so it doesn't overwrite header row at first
+        Cells(i + 1, 1).Value = r_i - 1
+        Cells(i + 1, 2).Value = name
+        Cells(i + 1, 3).Value = genre
+        Cells(i + 1, 4).Value = meat
+        Cells(i + 1, 5).Value = bread
+        Cells(i + 1, 6).Value = nood
+        Cells(i + 1, 7).Value = rice
+        Cells(i + 1, 8).Value = beans
+        Cells(i + 1, 9).Value = cheese
+        Cells(i + 1, 10).Value = potato
+        Cells(i + 1, 11).Value = spotato
+        Cells(i + 1, 12).Value = avocado
+        Cells(i + 1, 13).Value = bpep
+        Cells(i + 1, 14).Value = broc
+        Cells(i + 1, 15).Value = bsquash
+        Cells(i + 1, 16).Value = carrot
+        Cells(i + 1, 17).Value = celery
+        Cells(i + 1, 18).Value = corn
+        Cells(i + 1, 19).Value = cuc
+        Cells(i + 1, 20).Value = gbeans
+        Cells(i + 1, 21).Value = gpep
+        Cells(i + 1, 22).Value = onion
+        Cells(i + 1, 23).Value = tomato
+        Cells(i + 1, 24).Value = spinach
+        Cells(i + 1, 25).Value = ysquash
+        Cells(i + 1, 26).Value = zucc
+        Cells(i + 1, 27).Value = sauce
+        Cells(i + 1, 28).Value = garlic
+        Cells(i + 1, 29).Value = jalapeno
+        Cells(i + 1, 30).Value = ketchup
+        Cells(i + 1, 31).Value = mustard
+        Cells(i + 1, 32).Value = crackers
+        Cells(i + 1, 33).Value = sourc
+        Cells(i + 1, 34).Value = extra
+        Cells(i + 1, 35).Value = salad
+        Cells(i + 1, 36).Value = recipe
+        Cells(i + 1, 37).Value = leftovers
+        
+        'return to database containing all recipes
+        Worksheets("My_Recipes").Activate
+        'next iteration of the loop
+        Next i
+    Worksheets("Recipe_Generator").Activate
+    
+    Dim recipe_row_count As Integer
+    
+    recipe_row_count = Cells(Rows.Count, 1).End(xlUp).Row
+    
+    Range("A1:AJ1").Font.FontStyle = "Bold"
+    Range("A1:AJ1").Borders(xlEdgeBottom).LineStyle = xlContinuous
+    Range("K1:K6").Borders(xlEdgeRight).LineStyle = xlContinuous
+    Range("Z1:Z6").Borders(xlEdgeRight).LineStyle = xlContinuous
+    Range("AG1:AG6").Borders(xlEdgeRight).LineStyle = xlContinuous
+    
+    Range("A1:AJ1").Borders(xlEdgeBottom).Weight = xlMedium
+    Range("K1:K6").Borders(xlEdgeRight).Weight = xlMedium
+    Range("Z1:Z6").Borders(xlEdgeRight).Weight = xlMedium
+    Range("AG1:AG6").Borders(xlEdgeRight).Weight = xlMedium
+    
+    For i = 1 To 38
+        Cells(user_input + 1, i).Borders(xlEdgeBottom).LineStyle = xlContinuous
+        Cells(user_input + 1, i).Borders(xlEdgeBottom).Weight = xlMedium
+        Next i
+    
+
+    Columns("B").AutoFit
+End Sub

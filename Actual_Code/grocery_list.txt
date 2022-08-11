@@ -1,0 +1,242 @@
+Sub GroceryList()
+    
+    'Activate the Grocery List worksheet for initial formatting
+    Worksheets("Grocery_List").Activate
+    
+    'Clear the previous week's grocery list+formatting
+    Cells.Clear
+    
+        'Format the following:
+        'MEATS section (2,1):(2,5)
+        Cells(1, 1).Value = "MEATS"
+        'BREAD section - (4,1):(4,5)
+        Cells(3, 1).Value = "BREADS"
+        'NOODLES & RICE & BEANS - (6,1):(8,5)
+        Cells(5, 1).Value = "CARBS"
+        'CHEESE section - (10,1):(10,5)
+        Cells(9, 1).Value = "CHEESE"
+        'POTATO & SWEET POTATO - (12,1):(13,5)
+        Cells(11, 1).Value = "POTATO"
+        'CONDIMENTS
+        Cells(14, 1).Value = "CONDIMENTS"
+            'Sauce - DISPLAY STRINGS IN (15,1):(15,5)
+            'Garlic - DISPLAY IN (16,1) IF USED
+            'Jalapeno - DISPLAY IN (16,2) IF USED
+            'Ketchup - DISPLAY IN (16,3) IF USED
+            'Mustard - DISPLAY IN (16,4) IF USED
+            'Cracker - DISPLAY IN (16,5) IF USED
+            'Sour Cream - DISPLAY IN (16,6) IF USED
+        
+        'EXTRAS - DISPLAY EXTRAS IN (18,1):(18:5)
+        Cells(17, 1).Value = "EXTRAS"
+        
+        'VEGGIES section
+        Cells(1, 8).Value = "PRODUCE"
+        'Avocado
+        Cells(2, 9).Value = "AVOCADO"
+        'Bell Pepper
+        Cells(3, 9).Value = "BELL PEPPER"
+        'Brocolli
+        Cells(4, 9).Value = "BROCOLLI"
+        'Butternut Squash
+        Cells(5, 9).Value = "B. SQUASH"
+        'Carrot
+        Cells(6, 9).Value = "CARROT"
+        'Celery
+        Cells(7, 9).Value = "CELERY"
+        'Corn
+        Cells(8, 9).Value = "CORN"
+        'Cucumber
+        Cells(9, 9).Value = "CUCUMBER"
+        'Green Bean
+        Cells(10, 9).Value = "G. BEANS"
+        'Green Pepper
+        Cells(11, 9).Value = "G. PEPPER"
+        'Onion
+        Cells(12, 9).Value = "ONION"
+        'Tomato
+        Cells(13, 9).Value = "TOMATO"
+        'Spinach
+        Cells(14, 9).Value = "SPINACH"
+        'Yellow Squash
+        Cells(15, 9).Value = "Y. SQUASH"
+        'Zucchini
+        Cells(16, 9).Value = "ZUCCHINI"
+        
+        'titles merged and centered to encompass whole section
+        With Range("A1:E1,A3:E3,A5:E5,A9:E9,A11:E11,A14:E14,A17:E17,H1:I1")
+            .merge
+            .HorizontalAlignment = xlCenter
+            .Font.FontStyle = "Bold"
+            .Font.Underline = xlUnderlineStyleSingle
+        End With
+        
+        With Range("A1:F2,A3:F4,A5:F8,A9:F10,A11:F13,A14:F16,A17:F18,H1:I16,H18:I18")
+            .Borders(xlEdgeBottom).LineStyle = xlContinuous
+            .Borders(xlEdgeRight).LineStyle = xlContinuous
+            .Borders(xlEdgeLeft).LineStyle = xlContinuous
+            .Borders(xlEdgeTop).LineStyle = xlContinuous
+            .Borders(xlEdgeBottom).Weight = xlMedium
+            .Borders(xlEdgeRight).Weight = xlMedium
+            .Borders(xlEdgeLeft).Weight = xlMedium
+            .Borders(xlEdgeTop).Weight = xlMedium
+        End With
+    
+    With Worksheets("Grocery_List").Columns("A:E")
+        .ColumnWidth = 16
+    End With
+    
+    Columns("H:I").AutoFit
+        
+    
+    'Dim all the string/single variables to be used
+    Dim recipe_meat As String
+    Dim recipe_bread As String
+    Dim recipe_nood As String
+    Dim recipe_rice As String
+    Dim recipe_beans As String
+    Dim recipe_cheese As String
+    Dim recipe_potato As String
+    Dim recipe_spotato As String
+    Dim recipe_sauce As String
+    Dim recipe_extra As String
+    Dim recipe_recipe As String
+    
+    Dim recipe_avocado As Single
+    Dim recipe_bpep As Single
+    Dim recipe_broc As Single
+    Dim recipe_bsquash As Single
+    Dim recipe_carrot As Single
+    Dim recipe_celery As Single
+    Dim recipe_corn As Single
+    Dim recipe_cuc As Single
+    Dim recipe_gbeans As Single
+    Dim recipe_gpep As Single
+    Dim recipe_onion As Single
+    Dim recipe_tomato As Single
+    Dim recipe_spinach As Single
+    Dim recipe_ysquash As Single
+    Dim recipe_zucc As Single
+    
+    Dim recipe_garlic As String
+    Dim recipe_jalapeno As String
+    Dim recipe_ketchup As String
+    Dim recipe_mustard As String
+    Dim recipe_crackers As String
+    Dim recipe_sourc As String
+    Dim recipe_salad As String
+    Dim recipe_leftovers As String
+    
+    'Tally the  produce values + any salads for the week in (x,35)
+    recipe_avocado = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("L2:L6"))
+    Range("H2").Value = recipe_avocado
+    recipe_bpep = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("M2:M6"))
+    Range("H3").Value = recipe_avocado
+    recipe_broc = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("N2:N6"))
+    Range("H4").Value = recipe_broc
+    recipe_bsquash = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("O2:O6"))
+    Range("H5").Value = recipe_bsquash
+    recipe_carrot = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("P2:P6"))
+    Range("H6").Value = recipe_carrot
+    recipe_celery = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("Q2:Q6"))
+    Range("H7").Value = recipe_celery
+    recipe_corn = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("R2:R6"))
+    Range("H8").Value = recipe_corn
+    recipe_cuc = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("S2:S6"))
+    Range("H9").Value = recipe_cuc
+    recipe_gbeans = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("T2:T6"))
+    Range("H10").Value = recipe_gbeans
+    recipe_gpep = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("U2:U6"))
+    Range("H11").Value = recipe_gpep
+    recipe_onion = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("V2:V6"))
+    Range("H12").Value = recipe_onion
+    recipe_tomato = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("W2:W6"))
+    Range("H13").Value = recipe_tomato
+    recipe_spinach = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("X2:X6"))
+    Range("H14").Value = recipe_spinach
+    recipe_ysquash = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("Y2:Y6"))
+    Range("H15").Value = recipe_ysquash
+    recipe_zucc = Application.WorksheetFunction.Sum(Sheets("Recipe_Generator").Range("Z2:Z6"))
+    Range("H16").Value = recipe_zucc
+    
+    'Initialize salad counter to 0
+    recipe_salad = 0
+    
+    'Dim a for loop to run through each row
+    For i = 2 To 6
+        'Activate the worksheet with the recipes
+        Worksheets("Recipe_Generator").Activate
+        
+        'save a variable for singular strings
+        recipe_meat = Cells(i, 4)
+        recipe_bread = Cells(i, 5)
+        recipe_nood = Cells(i, 6)
+        recipe_rice = Cells(i, 7)
+        recipe_beans = Cells(i, 8)
+        recipe_cheese = Cells(i, 9)
+        recipe_potato = Cells(i, 10)
+        recipe_spotato = Cells(i, 11)
+        recipe_sauce = Cells(i, 27)
+        recipe_extra = Cells(i, 34)
+        
+        'check if condiments say T
+        If Cells(i, 28) = "T" Then recipe_garlic = "Garlic"
+        If Cells(i, 29) = "T" Then recipe_jalapeno = "Jalapeno"
+        If Cells(i, 30) = "T" Then recipe_ketchup = "Ketchup"
+        If Cells(i, 31) = "T" Then recipe_mustard = "Mustard"
+        If Cells(i, 32) = "T" Then recipe_crackers = "Crackers"
+        If Cells(i, 33) = "T" Then recipe_sourc = "Sour Cream"
+        
+        If Cells(i, 35) = "T" Then recipe_salad = recipe_salad + 1
+        
+        'go to the grocery_list worksheet to print the singular strings in their respective section
+        Worksheets("Grocery_List").Activate
+        Cells(2, i - 1) = recipe_meat
+        Cells(4, i - 1) = recipe_bread
+        Cells(6, i - 1) = recipe_nood
+        Cells(7, i - 1) = recipe_rice
+        Cells(8, i - 1) = recipe_beans
+        Cells(10, i - 1) = recipe_cheese
+        Cells(12, i - 1) = recipe_potato
+        Cells(13, i - 1) = recipe_spotato
+        Cells(15, i - 1) = recipe_sauce
+        Cells(16, 1) = recipe_garlic
+        Cells(16, 2) = recipe_jalapeno
+        Cells(16, 3) = recipe_ketchup
+        Cells(16, 4) = recipe_mustard
+        Cells(16, 5) = recipe_crackers
+        Cells(16, 6) = recipe_sourc
+        Cells(18, i - 1) = recipe_extra
+        
+    Next i
+    
+    Range("H18").Value = recipe_salad
+    Range("I18").Value = "salads"
+    
+    'use if statements to say both:
+    '"If a string says 'n/a', delete the contents of that cell"
+    '"If an integer is 0, delete the contents of that cell and its category"
+    For i = 2 To 18
+        For j = 1 To 5
+            If Cells(i, j).Value = "n/a" Then
+                Cells(i, j).Value = ""
+            End If
+        Next j
+    Next i
+    
+    For i = 2 To 16
+        If Cells(i, 8).Value = 0 Then
+            Cells(i, 8).Value = ""
+            Cells(i, 9).Value = ""
+        End If
+    Next i
+    
+    'Wrap text for reading
+    With Range("A1:I18")
+        .WrapText = True
+    End With
+    
+    
+    
+    
+End Sub

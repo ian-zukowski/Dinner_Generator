@@ -49,22 +49,22 @@ And here we reach the purpose of this repo: I've created a macro-enabled file wh
     'Then to_html from the df -->
 
 ### CODE BEHIND THE MACROS
-For more in depth pseudocode, be sure to check out the "Pseudocode" folder in the above resources, or click the relevant link provided.
+For pseudocode, be sure to check out the "Pseudocode" folder. Clicking the link will lead to the actual code used for the macros.
 
-* [RecipeGenerator](Pseudocode/macro_pseudocode.txt)
+* [RecipeGenerator](Actual_Code/recipe_gen.txt)
     - Use MsgBox to allow user to input X amount of recipes to generate
     - Dim empty variables for each item that needs to be grabbed
     - Start a for loop with X iterations in the database
     - Randomly choose a recipe_id
     - Save the values of that recipe_id and print in the destination worksheet
 
-* [RandomRecipe](Pseudocode/single_recipe_macro_pseudocode.txt)
+* [RandomRecipe](Actual_Code/single_recipe.txt)
     - Use MsgBox to allow user to input a specific recipe_id to import (or allow a random reroll)
     - Dim empty variables for each item that needs to be grabbed
     - Locate the desired recipe_id (or pick a random recipe_id)
     - Save the values from that recipe_id and print in the destination worksheet
 
-* [GroceryList](Pseudocode/grocery_macro_pseudocode.txt)
+* [GroceryList](Actual_Code/grocery_list.txt)
     - Set up different sections for meat, bread, produce, etc
     - Store ingredient columns as decimal-comptabile number types
     - Find sums for each ingredient column

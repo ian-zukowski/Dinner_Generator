@@ -1,0 +1,188 @@
+Sub replace_recipe()
+    
+    Worksheets("recipe_generator").Activate
+    'setup inputs for deleting a recipe, then for replacing it with a requested or random recipe
+    Dim input1 As Integer
+    Dim input2 As Integer
+    input1 = InputBox("Type the Excel row number you would like to replace")
+    ' ^ could replace with the recipe ID using a conditional -- (if cells(i,1)=input1 then ...)
+    
+    'Go to the database so user can check out recipe IDs to replace with
+    Worksheets("My_Recipes").Activate
+    input2 = InputBox("Type the recipe ID you would like to insert in that row (if you want random, type 0)")
+    
+    'dim all of the same value variables used in recipe_generator
+    Dim name As String
+    Dim genre As String
+    Dim meat As String
+    Dim bread As String
+    Dim nood As String
+    Dim rice As String
+    Dim beans As String
+    Dim cheese As String
+    Dim potato As String
+    Dim spotato As String
+    Dim sauce As String
+    Dim extra As String
+    Dim recipe As String
+    
+    Dim avocado As Single
+    Dim bpep As Single
+    Dim broc As Single
+    Dim bsquash As Single
+    Dim carrot As Single
+    Dim celery As Single
+    Dim corn As Single
+    Dim cuc As Single
+    Dim gbeans As Single
+    Dim gpep As Single
+    Dim onion As Single
+    Dim tomato As Single
+    Dim spinach As Single
+    Dim ysquash As Single
+    Dim zucc As Single
+    
+    Dim garlic As String
+    Dim jalapeno As String
+    Dim ketchup As String
+    Dim mustard As String
+    Dim crackers As String
+    Dim sourc As String
+    Dim salad As String
+    Dim leftovers As String
+
+    
+    RowCount = Cells(Rows.Count, "A").End(xlUp).Row
+    Dim r_i As Double
+        'if random -- reuse the same code from r_g
+        If input2 = 0 Then
+                'Dim recipe index as random value from 2 - RowCount (this may make duplicates in the weekly recipes -- these can be replaced by separate subfunction)
+                r_i = WorksheetFunction.RandBetween(2, RowCount)
+                name = Cells(r_i, 2)
+                genre = Cells(r_i, 3)
+                meat = Cells(r_i, 4)
+                bread = Cells(r_i, 5)
+                nood = Cells(r_i, 6)
+                rice = Cells(r_i, 7)
+                beans = Cells(r_i, 8)
+                cheese = Cells(r_i, 9)
+                potato = Cells(r_i, 10)
+                spotato = Cells(r_i, 11)
+                avocado = Cells(r_i, 12)
+                bpep = Cells(r_i, 13)
+                broc = Cells(r_i, 14)
+                bsquash = Cells(r_i, 15)
+                carrot = Cells(r_i, 16)
+                celery = Cells(r_i, 17)
+                corn = Cells(r_i, 18)
+                cuc = Cells(r_i, 19)
+                gbeans = Cells(r_i, 20)
+                gpep = Cells(r_i, 21)
+                onion = Cells(r_i, 22)
+                tomato = Cells(r_i, 23)
+                spinach = Cells(r_i, 24)
+                ysquash = Cells(r_i, 25)
+                zucc = Cells(r_i, 26)
+                sauce = Cells(r_i, 27)
+                garlic = Cells(r_i, 28)
+                jalapeno = Cells(r_i, 29)
+                ketchup = Cells(r_i, 30)
+                mustard = Cells(r_i, 31)
+                crackers = Cells(r_i, 32)
+                sourc = Cells(r_i, 33)
+                extra = Cells(r_i, 34)
+                salad = Cells(r_i, 35)
+                recipe = Cells(r_i, 36)
+                leftovers = Cells(r_i, 37)
+                        
+                        
+            'elseif specific id -- cells(input2 - 1, x) for each value
+            ElseIf input2 < RowCount Then
+                r_i = input2 + 1
+                name = Cells(r_i, 2)
+                genre = Cells(r_i, 3)
+                meat = Cells(r_i, 4)
+                bread = Cells(r_i, 5)
+                nood = Cells(r_i, 6)
+                rice = Cells(r_i, 7)
+                beans = Cells(r_i, 8)
+                cheese = Cells(r_i, 9)
+                potato = Cells(r_i, 10)
+                spotato = Cells(r_i, 11)
+                avocado = Cells(r_i, 12)
+                bpep = Cells(r_i, 13)
+                broc = Cells(r_i, 14)
+                bsquash = Cells(r_i, 15)
+                carrot = Cells(r_i, 16)
+                celery = Cells(r_i, 17)
+                corn = Cells(r_i, 18)
+                cuc = Cells(r_i, 19)
+                gbeans = Cells(r_i, 20)
+                gpep = Cells(r_i, 21)
+                onion = Cells(r_i, 22)
+                tomato = Cells(r_i, 23)
+                spinach = Cells(r_i, 24)
+                ysquash = Cells(r_i, 25)
+                zucc = Cells(r_i, 26)
+                sauce = Cells(r_i, 27)
+                garlic = Cells(r_i, 28)
+                jalapeno = Cells(r_i, 29)
+                ketchup = Cells(r_i, 30)
+                mustard = Cells(r_i, 31)
+                crackers = Cells(r_i, 32)
+                sourc = Cells(r_i, 33)
+                extra = Cells(r_i, 34)
+                salad = Cells(r_i, 35)
+                recipe = Cells(r_i, 36)
+                leftovers = Cells(r_i, 37)
+                
+            
+            'else -- return please enter a valid ID # or the letter R
+            Else
+                MsgBox ("Please enter a valid ID or the letter R")
+            
+        End If
+        
+    'Return to recipe_generator worksheet and print the results
+    Worksheets("Recipe_Generator").Activate
+
+    'print corresponding values in (i+1, __) so it doesn't overwrite header row at first
+    Cells(input1, 1).Value = r_i - 1
+    Cells(input1, 2).Value = name
+    Cells(input1, 3).Value = genre
+    Cells(input1, 4).Value = meat
+    Cells(input1, 5).Value = bread
+    Cells(input1, 6).Value = nood
+    Cells(input1, 7).Value = rice
+    Cells(input1, 8).Value = beans
+    Cells(input1, 9).Value = cheese
+    Cells(input1, 10).Value = potato
+    Cells(input1, 11).Value = spotato
+    Cells(input1, 12).Value = avocado
+    Cells(input1, 13).Value = bpep
+    Cells(input1, 14).Value = broc
+    Cells(input1, 15).Value = bsquash
+    Cells(input1, 16).Value = carrot
+    Cells(input1, 17).Value = celery
+    Cells(input1, 18).Value = corn
+    Cells(input1, 19).Value = cuc
+    Cells(input1, 20).Value = gbeans
+    Cells(input1, 21).Value = gpep
+    Cells(input1, 22).Value = onion
+    Cells(input1, 23).Value = tomato
+    Cells(input1, 24).Value = spinach
+    Cells(input1, 25).Value = ysquash
+    Cells(input1, 26).Value = zucc
+    Cells(input1, 27).Value = sauce
+    Cells(input1, 28).Value = garlic
+    Cells(input1, 29).Value = jalapeno
+    Cells(input1, 30).Value = ketchup
+    Cells(input1, 31).Value = mustard
+    Cells(input1, 32).Value = crackers
+    Cells(input1, 33).Value = sourc
+    Cells(input1, 34).Value = extra
+    Cells(input1, 35).Value = salad
+    Cells(input1, 36).Value = recipe
+    Cells(input1, 37).Value = leftovers
+
+End Sub
