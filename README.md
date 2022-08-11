@@ -3,8 +3,11 @@
 
 ## DESCRIPTION OF MACROS
 * Recipe_Generator
+    - This macro is located in the "Recipe_Generator" worksheet of the file. It will prompt a user to input the necessary amount of recipes for their desired time period, then randomly select that amount of recipes from the My_Recipes worksheet to display as a separate list.
 * Random_Recipe
+    - This macro is located in the "Recipe_Generator" worksheet of the file. It will first prompt a user to input the recipe to be replaced. Then it will prompt the user to input a desired or random recipe from the My_Recipes worksheet. The results of this second prompt will overwrite the singular original recipe that was chosen before.
 * Grocery_List
+    - This macro is located in the "Grocery_List" worksheet of the file. It will access the generated list of recipes located in the "Recipe_Generator" worksheet, and then print the results in separated sections (roughly based on locations in Kroger aisles)
 
 ## FUTURE IMPROVEMENTS
 * Allow user to input a desired recipe_type in Recipe_Generator
@@ -22,12 +25,17 @@
 * Add a "I have 'x' ingredient... give me a recipe using that" macro
     <!-- 'Will be super similar to the desired recipe_type improvement
     'Would have to try to account for uppercase/lowercase for this -->
+* Add a "I'm feeling adventerous" macro to access new recipes that aren't in the tried-and-true database
+    <!-- 'Will need a disclaimer to do AFTER generating other recipes for the week
+    'Won't need to use any ingredient variables for this one
+    'Do something similar to row count to find the last row, which will contain this new recipe
+    'Probably want to separate it even further -- last_row holds titles: "Recipe Name", "Recipe Source", and last_row+1 holds the values -->
 * Website upload so family members can easily view
     <!-- 'Will need to see if there is a to_html type function for excel
     'Otherwise will need to export to a pandas df
     'Then to_html from the df -->
 
-## CODE BEHIND THE MACROS
+### CODE BEHIND THE MACROS
 For more in depth pseudocode, be sure to check out the "Pseudocode" folder in the above resources, or click the relevant link provided.
 
 * [RecipeGenerator](Pseudocode/macro_pseudocode.txt)
