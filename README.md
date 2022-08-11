@@ -1,4 +1,4 @@
-# Dinner_Generator
+# Dinner Generator
 Hello, and welcome to the greatest development in the culinary software field since sliced dataframes! In this Github repo you can find the .xlsm file which I've been using since June 2022 to help me stay consistent in cooking homemade meals instead of always eating out. I was inspired to create this project when I realized I had been ordering takeout much more frequently during the pandemic, and then even moreso during my wife's first pregnancy when she would get cravings for fast food. 
 
 I've enjoyed cooking ever since I graduated college, and I understood that my decline in home cooking stemmed mainly from not having a coherent plan for the week ahead when I went grocery shopping. This would then create a cycle of:
@@ -19,6 +19,7 @@ And here we reach the purpose of this repo: I've created a macro-enabled file wh
     - This macro is located in the "Recipe_Generator" worksheet of the file. It will first prompt a user to input the recipe to be replaced. Then it will prompt the user to input a desired or random recipe from the My_Recipes worksheet. The results of this second prompt will overwrite the singular original recipe that was chosen before.
 * Grocery_List
     - This macro is located in the "Grocery_List" worksheet of the file. It will access the generated list of recipes located in the "Recipe_Generator" worksheet, and then print the results in separated sections (roughly based on locations in Kroger aisles)
+    - Note, this macro currently only accounts for up to the first 5 recipes in the generated list
 
 ## FUTURE IMPROVEMENTS
 * Add the actual recipes I use into the database so others can see how to make the meals (or I can double check the source recipe)
