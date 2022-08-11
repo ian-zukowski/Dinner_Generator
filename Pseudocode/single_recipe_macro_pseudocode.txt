@@ -1,0 +1,16 @@
+'setup inputs for selecting a recipe to replace
+'then for replacing it with a requested or random recipe
+
+    'Worksheet for input1 should be the week's recipes (user should see the 1 they want to replace)
+    'Worksheet for input2 should be the database (user should see recipes that can do the replacing)
+  
+    'Dim all of the same value variables used in recipe_generator
+
+        'if user wants random -- reuse the same code from r_g
+            'elseif specific id -- cells(input2 - 1, x) for each value
+     
+            'else -- return please enter a valid ID # or the letter R
+        
+    'Return to recipe_generator worksheet and print the results
+
+    'print corresponding values in (i+1, __) to account for header row

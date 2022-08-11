@@ -1,0 +1,62 @@
+'Activate grocery list worksheet
+
+'Format the following:
+'MEATS section
+'BREAD section
+'NOODLES section
+'RICE section
+'BEANS section
+'CHEESE section
+'POTATO
+'SWEET POTATO
+'CONDIMENTS
+	'Sauce
+	'Garlic
+	'Jalapeno
+	'Ketchup
+	'Mustard
+	'Cracker
+	'Sour Cream
+
+'EXTRAS
+
+'VEGGIES section
+'Avocado
+'Bell Pepper
+'Brocolli
+'Butternut Squash
+'Carrot
+'Celery
+'Corn
+'Cucumber
+'Green Bean
+'Green Pepper
+'Onion
+'Tomato
+'Spinach
+'Yellow Squash
+'Zucchini
+
+
+'Activate worksheet with weekly recipes
+
+'Dim vegetable variables to be summed -- some decimals
+'Initalize each veggie variable to start at 0
+
+'Dim variables to save string values for current row
+
+
+'Start a for loop that will run through each row
+	'For each veggie cell, add to the sum
+	'For string variables, save the string value
+
+	'Activate the grocery list worksheet
+
+	'Print the string variables into (const row, i+1 column) 
+	'i.e. mondaymeat in B1, tuesmeat in B2, etc.
+
+	'Activate the weekly recipes
+	'Next i
+
+'Activate the grocery list worksheet
+'Print the gathered sum values in corresponding cells

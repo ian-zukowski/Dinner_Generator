@@ -1,0 +1,71 @@
+* (2) Create a user-input model for selecting 5 recipes
+    * Add a filter to manually select
+    * Add a random select button if not wanting to choose
+
+    ## CODE
+    - Use MsgBox to allow user to input a specific recipe id
+    - Dim empty variables for each item that needs to be grabbed
+    - Randomly choose a recipe_id
+    - Save the values of that recipe_id and print in the destination worksheet
+
+
+'Define the sub-routine to run
+	'Get input on how many recipes user wants for the week
+
+	'Activate the worksheet which contains the data
+	'Dim RowCount = Cells(Rows.Count, "A").End(xlUp).Row to find total amount of rows
+
+
+	'Dim column variables as strings/integers
+	'string are: name, type, meat, bread, nood, rice, beans, cheese, potato, spotato, sauce, extra, recipe
+	'integer are: avocado, bpep, broc, bsquash, carrot, celery, corn, cuc, gbeans, gpep, onion, tomato, spinach, ysquash, zucc
+	'boolean are: jalapeno, ketchup, mustard, crackers, sourc, salad
+
+	
+	'Create X iterations for recipeIndex for loop
+		'Dim A as random value from 2 to RowCount (this may make duplicates in the weekly recipes -- these can be replaced by separate subfunction)
+		'Use (2 to RowCount) so it doesn't try to use title row
+
+		'recipe_name = cells(A,2))
+		'recipe_type = cells(A,3)
+		'recipe_meat = cells(A,4)
+		'recipe_bread = cells(A,5)
+		'recipe_nood = cells(A,6)
+		'recipe_rice = cells(A,7)
+		'recipe_beans = cells(A,8)
+		'recipe_cheese = cells(A,9)
+		'recipe_potato = cells(A,10)
+		'recipe_spotato = cells(A,11)
+		'recipe_avocado = cells(A,12)
+		'recipe_bpep = cells(A,13)
+		'recipe_broc = cells(A,14)
+		'recipe_bsquash = cells(A,15)
+		'recipe_carrot = cells(A,16)
+		'recipe_celery = cells(A,17)
+		'recipe_corn = cells(A,18)
+		'recipe_cuc = cells(A,19)
+		'recipe_gbeans = cells(A,20)
+		'recipe_gpep = cells(A,21)
+		'recipe_onion = cells(A,22)
+		'recipe_tomato = cells(A,23)
+		'recipe_spinach = cells(A,24)
+		'recipe_ysquash = cells(A,25)
+		'recipe_zucc = cells(A,26)
+		'recipe_sauce = cells(A,27)
+		'recipe_jalapeno = cells(A,28)
+		'recipe_ketchup = cells(A,29)
+		'recipe_mustard = cells(A,30)
+		'recipe_crackers = cells(A,31)
+		'recipe_sourc = cells(A,32)
+		'recipe_extra = cells(A,33)
+		'recipe_salad = cells(A,34)
+		'recipe_recipe = cells(A,35)
+		'recipe_leftovers = cells(A,36)
+
+		'activate the worksheet displaying the weekly recipes
+
+		'print corresponding values in (i+1, __) so it doesn't overwrite header row at first
+
+		'return to database containing all recipes
+
+		'next iteration of the loop
