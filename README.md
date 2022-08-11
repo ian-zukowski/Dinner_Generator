@@ -37,7 +37,7 @@ For more in depth pseudocode, be sure to check out the "Pseudocode" folder in th
     - Randomly choose a recipe_id
     - Save the values of that recipe_id and print in the destination worksheet
 
-* [RandomRecipe](Pseudocode/single_recipe_macro_pseudocode.txt.txt)
+* [RandomRecipe](Pseudocode/single_recipe_macro_pseudocode.txt)
     - Use MsgBox to allow user to input a specific recipe_id to import (or allow a random reroll)
     - Dim empty variables for each item that needs to be grabbed
     - Locate the desired recipe_id (or pick a random recipe_id)
